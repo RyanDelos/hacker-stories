@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+// Array Element
 const list = [
   {
     title: 'React',
@@ -19,19 +20,36 @@ const list = [
   },
 ];
 
-function Search() {
+// component definition
+const App = () => {
+  return (
+    <div>
+      <h1>My Hacker Stories</h1>
+      <Search />
+      <hr />
+      {/* creating an instance of List */}
+      <List />
+      {/* creating an instance of List */}
+      <List />
+    </div>
+  );
+};
+
+// component definition
+const Search = () => {
   return (
     <div>
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" />
     </div>
   );
-}
+};
 
-function List() {
+// component definition
+const List = () => {
   return (
     <ul>
-      {list.map(function (item) {
+      {list.map((item) => {
         return (
           <li key={item.objectID}>
             <span>
@@ -45,17 +63,6 @@ function List() {
       })}
     </ul>
   );
-}
-
-function App() {
-  return (
-    <div>
-      <h1>My Hacker Stories</h1>
-      <Search />
-      <hr />
-      <List /> {/* Call the List component */}
-    </div>
-  );
-}
+};
 
 export default App;
