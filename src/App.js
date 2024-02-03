@@ -174,19 +174,47 @@ const List = ({ list, onRemoveItem }) => {
   };
 
   return (
-    <ul>
-      <li style={{ display: 'flex' }}>
-        <span style={{ width: '40%' }}>Title</span>
-        <span style={{ width: '30%' }}>Author</span>
-        <span style={{ width: '10%' }}>Comments</span>
-        <span style={{ width: '10%' }}>Points</span>
-        <span style={{ width: '10%' }}>Actions</span>
-      </li>
+    // <ul>
+    //   <li style={{ display: 'flex' }}>
+    //     <span style={{ width: '40%' }}>Title</span>
+    //     <span style={{ width: '30%' }}>Author</span>
+    //     <span style={{ width: '10%' }}>Comments</span>
+    //     <span style={{ width: '10%' }}>Points</span>
+    //     <span style={{ width: '10%' }}>Actions</span>
+    //   </li>
 
+    //   {list.map((item) => (
+    //     <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
+    //   ))}
+    // </ul>
+    <div>
+      <div>
+        <span>
+          <button type="button" onClick={() => handleSort('TITLE')}>
+            Title
+          </button>
+        </span>
+        <span>
+          <button type="button" onClick={() => handleSort('AUTHOR')}>
+            Author
+          </button>
+        </span>
+        <span>
+          <button type="button" onClick={() => handleSort('COMMENT')}>
+            Comments
+          </button>
+        </span>
+        <span>
+          <button type="button" onClick={() => handleSort('POINT')}>
+            Points
+          </button>
+        </span>
+        <span>Actions</span>
+      </div>
       {list.map((item) => (
         <Item key={item.objectID} item={item} onRemoveItem={onRemoveItem} />
       ))}
-    </ul>
+    </div>
   );
 };
 
